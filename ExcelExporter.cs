@@ -44,11 +44,10 @@ namespace GenericUtils.Data {
         private void WriteDataTableAsSheet(string connectionString, DataTable dt) {
             using (OleDbConnection conn = new OleDbConnection(connectionString)) {
                 conn.Open();
-                //we decided to just use the formatted sheet in excel
-                //using (OleDbCommand cmd = conn.CreateCommand()) {
-                //    cmd.CommandText = BuildCreateSheetTabStatement(dt);
-                //    cmd.ExecuteNonQuery();
-                //}
+                using (OleDbCommand cmd = conn.CreateCommand()) {
+                    cmd.CommandText = BuildCreateSheetTabStatement(dt);
+                    cmd.ExecuteNonQuery();
+                }
                 foreach (DataRow dr in dt.Rows) {
                     using (OleDbCommand cmd = conn.CreateCommand()) {
                         cmd.CommandText = BuildInsertStatement(dr);
