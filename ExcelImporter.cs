@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 
 namespace GenericUtils.Data {
+	//I typically don't care for comments all that much but I'm trying out Git.
     public class DataImporter {
         private static object lockObject = new object();
         private static string importLocation;
