@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 
 namespace GenericUtils.Data {
+	//change from another comp.
     public class ExcelExporter:DataImporter {
         private static object lockObject = new object();
         private static string exportLocation;
